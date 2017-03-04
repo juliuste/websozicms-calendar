@@ -30,7 +30,10 @@ You need to provide the base URL of the WebSoziCMS website you want to query as 
 	start: '2017-03-03T18:30:00.000Z', // Date() Object
 	end: '2017-03-03T21:00:00.000Z', // Date() Object
 	title: 'Monthly meeting',
-	organization: 'Cool organization'
+	organization: {
+		id: 'spdbutzwest',
+		name: 'SPD Butz-West'
+	}
 }
 ```
 

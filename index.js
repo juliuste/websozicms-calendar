@@ -16,7 +16,10 @@ const parseResult = (result) => {
 	const extracted = parseSummary(result.summary)
 	return Object.assign(extracted, {
 		title: result.title,
-		organization: result.author
+		organization: {
+			id: result.author.replace(/[^A-Za-z0-9]/g, '').toLowerCase(),
+			name: result.author
+		}
 	})
 }
 
