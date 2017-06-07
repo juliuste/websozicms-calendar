@@ -1,5 +1,7 @@
 # websozicms-calendar
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/websozicms-calendar.svg)](https://greenkeeper.io/)
+
 Queries a [WebSoziCMS](https://www.websozicms.de) website for events.
 
 [![npm version](https://img.shields.io/npm/v/websozicms-calendar.svg)](https://www.npmjs.com/package/websozicms-calendar)
