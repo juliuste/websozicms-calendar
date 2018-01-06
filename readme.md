@@ -4,9 +4,11 @@ Queries a [WebSoziCMS](https://www.websozicms.de) website for events.
 
 [![npm version](https://img.shields.io/npm/v/websozicms-calendar.svg)](https://www.npmjs.com/package/websozicms-calendar)
 [![Build Status](https://travis-ci.org/juliuste/websozicms-calendar.svg?branch=master)](https://travis-ci.org/juliuste/websozicms-calendar)
+[![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/websozicms-calendar.svg)](https://greenkeeper.io/)
 [![dependency status](https://img.shields.io/david/juliuste/websozicms-calendar.svg)](https://david-dm.org/juliuste/websozicms-calendar)
 [![dev dependency status](https://img.shields.io/david/dev/juliuste/websozicms-calendar.svg)](https://david-dm.org/juliuste/websozicms-calendar#info=devDependencies)
 [![license](https://img.shields.io/github/license/juliuste/websozicms-calendar.svg?style=flat)](LICENSE)
+[![chat on gitter](https://badges.gitter.im/juliuste.svg)](https://gitter.im/juliuste)
 
 ## Installation
 
