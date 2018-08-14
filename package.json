@@ -1,7 +1,7 @@
 {
   "name": "websozicms-calendar",
   "description": "Queries a WebSoziCMS website calendar",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "keywords": [
     "websozicms",
     "spd"
