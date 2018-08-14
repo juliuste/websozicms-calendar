@@ -1,10 +1,10 @@
 'use strict'
 
-const join = require('url-join')
+const join = require('url').resolve
 const rss = require('simple-rss')
 const moment = require('moment-timezone')
 
-const parseDateTime = (dateTime) => moment.tz(dateTime, 'DD.MM.YYYY HH:mm', 'Europe/Berlin').toISOString()
+const parseDateTime = (dateTime) => moment.tz(dateTime, 'DD.MM.YYYY HH:mm', 'Europe/Berlin').toDate()
 
 const parseSummary = (summary) => ({
 	location: summary.slice(0, -36),
@@ -13,22 +13,26 @@ const parseSummary = (summary) => ({
 })
 
 const parseResult = (result) => {
-	const extracted = parseSummary(result.summary)
-	return Object.assign(extracted, {
+	const event = {
 		title: result.title,
 		organization: {
 			id: result.author.replace(/[^A-Za-z0-9]/g, '').toLowerCase(),
 			name: result.author
 		}
-	})
+	}
+
+	const extracted = parseSummary(result.summary)
+
+	event.start = extracted.start
+	if (extracted.location) event.location = extracted.location
+	if (+extracted.end > 0 && +extracted.end > +extracted.start) event.end = extracted.end
+
+	return event
 }
 
-const parseResults = (results) => results.map(parseResult)
-
-const fetch = (url) => {
-	url = join(url, '/calendar.xml')
-	return rss(url)
-	.then(parseResults)
+const calendar = async (url) => {
+	const results = await(rss(join(url, '/calendar.xml')))
+	return results.map(parseResult)
 }
 
-module.exports = fetch
+module.exports = calendar

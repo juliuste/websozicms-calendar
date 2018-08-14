@@ -6,13 +6,13 @@ Queries a [WebSoziCMS](https://www.websozicms.de) website for events.
 [![Build Status](https://travis-ci.org/juliuste/websozicms-calendar.svg?branch=master)](https://travis-ci.org/juliuste/websozicms-calendar)
 [![Greenkeeper badge](https://badges.greenkeeper.io/juliuste/websozicms-calendar.svg)](https://greenkeeper.io/)
 [![dependency status](https://img.shields.io/david/juliuste/websozicms-calendar.svg)](https://david-dm.org/juliuste/websozicms-calendar)
-[![dev dependency status](https://img.shields.io/david/dev/juliuste/websozicms-calendar.svg)](https://david-dm.org/juliuste/websozicms-calendar#info=devDependencies)
-[![license](https://img.shields.io/github/license/juliuste/websozicms-calendar.svg?style=flat)](LICENSE)
+[![license](https://img.shields.io/github/license/juliuste/websozicms-calendar.svg?style=flat)](license)
 [![chat on gitter](https://badges.gitter.im/juliuste.svg)](https://gitter.im/juliuste)
+
 
 ## Installation
 
-```js
+```bash
 npm install websozicms-calendar
 ```
 
@@ -24,13 +24,13 @@ const calendar = require('websozicms-calendar')
 const events = calendar('http://cool-organization.com').then(…)
 ```
 
-You need to provide the base URL of the WebSoziCMS website you want to query as a single parameter. Returns a `Promise` that resolves in a list of events that looks like this
+You need to provide the base URL of the WebSoziCMS website you want to query as a single parameter. Returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/promise) that resolves in a list of events which looks like this:
 
 ```js
 {
-	location: 'Zum wilden Troll, Meister-Eder-Platz 8, 48484 Blubdorf',
+	location: 'Zum wilden Troll, Meister-Eder-Platz 8, 48484 Blubdorf', // optional
 	start: '2017-03-03T18:30:00.000Z', // Date() Object
-	end: '2017-03-03T21:00:00.000Z', // Date() Object
+	end: '2017-03-03T21:00:00.000Z', // Date() Object, optional
 	title: 'Monthly meeting',
 	organization: {
 		id: 'spdbutzwest',
@@ -41,4 +41,4 @@ You need to provide the base URL of the WebSoziCMS website you want to query as 
 
 ## Contributing
 
-If you found a bug, want to propose a feature or feel the urge to complain about your life, feel free to visit [the issues page](https://github.com/juliuste/websozicms-calendar/issues).
+If you found a bug or want to propose a feature, feel free to visit [the issues page](https://github.com/juliuste/websozicms-calendar/issues).
